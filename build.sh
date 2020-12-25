@@ -49,7 +49,7 @@ function ci_demo_preprocessor() {
 function ci_carthage_demo() {
     NAME=$1
     pushd iOSSnapshotTestCaseCarthageDemo
-    carthage bootstrap
+    ./carthage.sh bootstrap --cache-builds --no-use-binaries --platform iOS
     xcodebuild -project iOSSnapshotTestCaseCarthageDemo.xcodeproj \
                -scheme iOSSnapshotTestCaseCarthageDemo \
                -destination "platform=iOS Simulator,name=${NAME}" \

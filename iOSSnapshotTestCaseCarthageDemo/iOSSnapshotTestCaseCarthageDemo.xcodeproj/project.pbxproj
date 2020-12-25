@@ -12,7 +12,6 @@
 		E793D4AD21ED6CB4001039B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E793D4AB21ED6CB4001039B0 /* LaunchScreen.storyboard */; };
 		E7E942DF21ED6EE1005BC62E /* iOSSnapshotTestCaseCarthageDemoSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E942DE21ED6EE1005BC62E /* iOSSnapshotTestCaseCarthageDemoSwiftTests.swift */; };
 		E7E942E821ED6F47005BC62E /* FBSnapshotTestCase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E942E721ED6F47005BC62E /* FBSnapshotTestCase.framework */; };
-		E7E942EA21ED704D005BC62E /* FBSnapshotTestCase.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E7E942E721ED6F47005BC62E /* FBSnapshotTestCase.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,19 +23,6 @@
 			remoteInfo = iOSSnapshotTestCaseCarthageDemo;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		E7E942E921ED7039005BC62E /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				E7E942EA21ED704D005BC62E /* FBSnapshotTestCase.framework in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		E793D49F21ED6CB3001039B0 /* iOSSnapshotTestCaseCarthageDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSSnapshotTestCaseCarthageDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,7 +129,7 @@
 				E7E942D821ED6EE1005BC62E /* Sources */,
 				E7E942D921ED6EE1005BC62E /* Frameworks */,
 				E7E942DA21ED6EE1005BC62E /* Resources */,
-				E7E942E921ED7039005BC62E /* CopyFiles */,
+				53D55DBB25968D61002B7BB7 /* Copy Carthage Frameworks */,
 			);
 			buildRules = (
 			);
@@ -162,7 +148,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1230;
 				ORGANIZATIONNAME = "Alan Zeino";
 				TargetAttributes = {
 					E793D49E21ED6CB3001039B0 = {
@@ -211,6 +197,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		53D55DBB25968D61002B7BB7 /* Copy Carthage Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				FBSnapshotTestCase.framework,
+			);
+			name = "Copy Carthage Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "exec \"${SRCROOT}/scripts/copy-carthage-frameworks.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E793D49B21ED6CB3001039B0 /* Sources */ = {
@@ -277,6 +285,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -339,6 +348,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
