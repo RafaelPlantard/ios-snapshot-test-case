@@ -47,7 +47,7 @@
         [parentView addSubview:visualEffectView];
 
         self.usesDrawViewHierarchyInRect = YES;
-        FBSnapshotVerifyViewWithPixelOptions(parentView, nil, FBSnapshotTestCaseDefaultSuffixes(), 0.09, 0.5); // lowest perPixelTolerance for iPhone X is 0.04, but for iPhone 7 is 0.09
+        FBSnapshotVerifyViewWithPixelOptions(parentView, nil, FBSnapshotTestCaseDefaultSuffixes(), 0.09, 0.0); // lowest perPixelTolerance for iPhone X is 0.04, but for iPhone 7 is 0.09
     }
 }
 
