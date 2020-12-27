@@ -62,8 +62,7 @@ jobs:
     
     - name: Release
       uses: yakuhzi/action-release@v1.2.0
-      working-directory: iOSSnapshotTestCaseCarthageDemo
       with:
-        file: ${{ secrets.PROJECT_NAME }}.framework.zip
+        file: iOSSnapshotTestCaseCarthageDemo/${{ secrets.PROJECT_NAME }}.framework.zip
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
