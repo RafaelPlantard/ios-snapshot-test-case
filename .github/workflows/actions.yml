@@ -36,9 +36,6 @@ jobs:
     runs-on: macos-11.0
     needs: tests
     if: startsWith(github.ref, 'refs/tags/')
-    defaults:
-      run:
-        working-directory: iOSSnapshotTestCaseCarthageDemo
 
     steps:
     - uses: actions/checkout@v2
@@ -56,13 +53,16 @@ jobs:
         version: ${{ secrets.XCODE_VERSION }}
 
     - name: Build
-      run: ./carthage.sh build --no-skip-current --platform ios
+      run: ./carthage.sh bootstrap --cache-builds --no-use-binaries --platform iOS
+      working-directory: iOSSnapshotTestCaseCarthageDemo
     
     - name: Archive
-      run: ./carthage.sh archive ${PROJECT_NAME} ${EXTRA_FRAMEWORKS}
+      run: ./carthage.sh archive ${PROJECT_NAME}
+      working-directory: iOSSnapshotTestCaseCarthageDemo
     
     - name: Release
       uses: yakuhzi/action-release@v1.2.0
+      working-directory: iOSSnapshotTestCaseCarthageDemo
       with:
         file: ${{ secrets.PROJECT_NAME }}.framework.zip
       env:
